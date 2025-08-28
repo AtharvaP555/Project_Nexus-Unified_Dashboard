@@ -28,93 +28,87 @@ Built with **Django REST Framework** (backend) and **React + Vite** (frontend), 
 
 ---
 
-## 📂 Project Structure
-
-project_nexus/
-├── backend/ # Django project (settings, urls, wsgi/asgi)
-├── core/ # Main app (models, views, serializers, APIs)
-├── frontend/ # React + Vite frontend
-│ ├── src/
-│ │ ├── components/ # Widgets & UI components
-│ │ ├── api/ # Axios API layer
-│ │ └── App.jsx # Main app entry
-└── manage.py
-
-yaml
-Copy code
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Backend (Django)
 
-# Navigate to project root
+> #### Navigate to project root
+> 
+>> cd project_nexus
+> 
+> #### Create virtual environment
+> 
+>> python -m venv venv
+>> source venv/bin/activate # On Windows: venv\Scripts\activate
+> 
+> #### Install dependencies
+>
+>>pip install -r requirements.txt
+>
+> #### Run migrations
+>
+>> python manage.py migrate
+>
+> #### Start backend server
+>
+>> python manage.py runserver
 
-cd project_nexus
-
-# Create virtual environment
-
-python -m venv venv
-source venv/bin/activate # On Windows: venv\Scripts\activate
-
-# Install dependencies
-
-pip install -r requirements.txt
-
-# Run migrations
-
-python manage.py migrate
-
-# Start backend server
-
-python manage.py runserver
 Backend runs on: http://localhost:8000
 
 ### 2️⃣ Frontend (React + Vite)
 
-bash
-Copy code
-cd frontend
-
-# Install dependencies
-
-npm install
-
-# Start frontend dev server
-
-npm run dev
+> > cd frontend
+>
+> #### Install dependencies
+> 
+>> npm install
+>
+> #### Start frontend dev server
+>
+>>npm run dev
+>
 Frontend runs on: http://localhost:5173
 
-🔑 Environment Variables
+---
+
+## 🔑 Environment Variables
+
 Create a .env file in the project root with:
 
-SECRET_KEY=your_django_secret_key
-DEBUG=True
+> SECRET_KEY=your_django_secret_key
+>
+> DEBUG=True
+>
+> GITHUB_API_TOKEN=your_github_token
+>
+> OPENWEATHER_API_KEY=your_openweather_key
+>
+> NEWS_API_KEY=your_newsapi_key
 
-# API Keys
+---
 
-GITHUB_API_TOKEN=your_github_token
-OPENWEATHER_API_KEY=your_openweather_key
-NEWS_API_KEY=your_newsapi_key
-▶️ Usage
-Register/Login to the app
+## ▶️ Usage
+      
+1. Register/Login to the app
+2. Add widgets (GitHub, Weather, News, Todo)
+3. Configure widgets (e.g., GitHub username, city name)
+4. Drag & drop to reorder dashboard layout
 
-Add widgets (GitHub, Weather, News, Todo)
+---
 
-Configure widgets (e.g., GitHub username, city name)
+## 📌 Future Improvements
 
-Drag & drop to reorder dashboard layout
+- 📊 Add more widgets (Finance, Calendar, Notes, etc.)
+- ☁️ Deployment with Docker + Cloud (Heroku/Vercel)
+- 🗂️ PostgreSQL support with Redis caching
 
-📌 Future Improvements
-📊 Add more widgets (Finance, Calendar, Notes, etc.)
+---
 
-☁️ Deployment with Docker + Cloud (Heroku/Vercel)
+## 🤝 Contributing
 
-🗂️ PostgreSQL support with Redis caching
-
-🤝 Contributing
 Feel free to fork this repo, raise issues, and submit PRs!
 
-📜 License
+---
+
+## 📜 License
 MIT License. Free to use and modify.
