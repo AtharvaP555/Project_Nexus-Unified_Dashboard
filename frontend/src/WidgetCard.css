@@ -1,0 +1,770 @@
+.widget-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+}
+
+.widget-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.widget-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.widget-icon {
+  font-size: 1.5rem;
+}
+
+.widget-title {
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.widget-type {
+  margin-bottom: 1rem;
+}
+
+.type-badge {
+  background: #e2e8f0;
+  color: #4a5568;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.widget-actions {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* Button Styles */
+.btn-save,
+.btn-cancel,
+.btn-delete {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.btn-save {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.btn-save:hover {
+  background: #9ae6b4;
+  transform: translateY(-1px);
+}
+
+.btn-cancel {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.btn-cancel:hover {
+  background: #feb2b2;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: #fed7d7;
+  color: #c53030;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  background: #feb2b2;
+  transform: translateY(-1px);
+}
+
+/* Widget Content Styles */
+.widget-content {
+  margin: 1rem 0;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d3748;
+}
+
+.widget-loading,
+.widget-error {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+}
+
+.widget-error {
+  color: #e53e3e;
+}
+
+/* GitHub Widget Styles */
+.github-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.github-avatar {
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+}
+
+.github-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.github-stats p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Weather Widget Styles */
+.weather-content {
+  text-align: center;
+}
+
+.weather-content p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.weather-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.weather-location {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.weather-stats {
+  text-align: left;
+}
+
+.weather-temp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #2d3748;
+}
+
+.weather-condition {
+  margin: 0.25rem 0;
+  color: #4a5568;
+}
+
+.weather-humidity,
+.weather-wind {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* News Widget Styles */
+.news-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.news-item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.news-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.news-link {
+  color: #2d3748;
+  text-decoration: none;
+}
+
+.news-link:hover {
+  color: #667eea;
+  text-decoration: underline;
+}
+
+.news-source {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #718096;
+  font-style: italic;
+}
+
+.news-more {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.8rem;
+  color: #667eea;
+  text-align: center;
+}
+
+/* Todo Widget Styles */
+.todo-widget {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.todo-input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.todo-add-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #48bb78;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todo-add-btn:hover:not(:disabled) {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.todo-add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+.todo-empty {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.todo-item:hover {
+  background: #f7fafc;
+}
+
+.todo-item.completed {
+  opacity: 0.6;
+}
+
+.todo-label {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #718096;
+}
+
+.todo-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.todo-delete-btn:hover {
+  opacity: 1;
+  background: #fed7d7;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.8rem;
+}
+
+.todo-count {
+  color: #718096;
+}
+
+.todo-clear-btn {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.todo-clear-btn:hover {
+  background: #fed7d7;
+}
+
+/* Todo Widget Themes */
+
+.todo-widget.theme-dark {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.todo-widget.theme-dark .todo-input {
+  background: #4a5568;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+.todo-widget.theme-dark .todo-item:hover {
+  background: #4a5568;
+}
+
+.todo-widget.theme-dark .todo-text {
+  color: #e2e8f0;
+}
+
+.todo-widget.theme-blue {
+  background: #ebf8ff;
+}
+
+.todo-widget.theme-blue .todo-input {
+  border-color: #90cdf4;
+}
+
+.todo-widget.theme-blue .todo-add-btn {
+  background: #3182ce;
+}
+
+.todo-widget.theme-blue .todo-item:hover {
+  background: #bee3f8;
+}
+
+.todo-widget.theme-green {
+  background: #f0fff4;
+}
+
+.todo-widget.theme-green .todo-input {
+  border-color: #9ae6b4;
+}
+
+.todo-widget.theme-green .todo-add-btn {
+  background: #38a169;
+}
+
+.todo-widget.theme-green .todo-item:hover {
+  background: #c6f6d5;
+}
+
+.todo-widget.theme-purple {
+  background: #faf5ff;
+}
+
+.todo-widget.theme-purple .todo-input {
+  border-color: #d6bcfa;
+}
+
+.todo-widget.theme-purple .todo-add-btn {
+  background: #805ad5;
+}
+
+.todo-widget.theme-purple .todo-item:hover {
+  background: #e9d8fd;
+}
+
+/* Configuration Modal Styles */
+.config-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.config-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.config-checkbox-group {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #f7fafc;
+  border-radius: 6px;
+}
+
+.config-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+.config-checkbox {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.config-info {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #e6fffa;
+  border-radius: 6px;
+  border-left: 4px solid #38b2ac;
+}
+
+.config-info p {
+  margin: 0.25rem 0;
+  font-size: 0.8rem;
+  color: #234e52;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #2d3748;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #718096;
+}
+
+.modal-close:hover {
+  color: #2d3748;
+}
+
+.config-group {
+  margin-bottom: 1rem;
+}
+
+.config-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.config-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.config-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Configure Button */
+.btn-configure {
+  background: #d6bcfa;
+  color: #553c9a;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.btn-configure:hover {
+  background: #b794f4;
+  transform: translateY(-1px);
+}
+
+/* Config badges */
+.config-badge {
+  background: #e9d8fd;
+  color: #553c9a;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+/* Drag & Drop Styles */
+.sortable-widget {
+  touch-action: none; /* Prevent scrolling while dragging on touch devices */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sortable-widget.dragging {
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* Drag handle style - make the entire widget draggable but indicate grab area */
+.widget-card {
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.widget-card:active {
+  cursor: grabbing;
+}
+
+.widget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Visual feedback during drag */
+.dnd-overlay {
+  background: rgba(102, 126, 234, 0.1);
+  border: 2px dashed #667eea;
+  border-radius: 16px;
+}
+
+/* Keyboard navigation support */
+.sortable-widget:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Drag Handle Styles */
+.drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  font-size: 16px;
+  user-select: none;
+}
+
+.drag-handle:hover {
+  opacity: 1;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.drag-handle-placeholder {
+  width: 24px;
+  height: 24px;
+  visibility: hidden;
+}
+
+/* Update widget header to accommodate drag handle */
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.widget-title {
+  flex: 1;
+  margin: 0;
+}
+
+/* Ensure sortable widget container positions handle correctly */
+.sortable-widget {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Remove cursor styles from widget card since handle does the dragging */
+.widget-card {
+  cursor: auto; /* Remove grab cursor from entire card */
+  flex: 1;
+}
+
+.widget-card:hover {
+  transform: none; /* Remove lift effect on hover */
+  cursor: auto;
+}
+
+/* Drop preview animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sortable-widget.drop-target {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .widget-card {
+    padding: 1.25rem;
+  }
+
+  .order-display {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .widgets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .widget-card {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .widgets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,45 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Virtual environment
+venv/
+.env/
+venv*/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node.js - frontend specific
+/frontend/node_modules/
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/dist/
+/frontend/build/
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.production
+
+# Python - specific to your structure
+/.env
+/db.sqlite3
+/venv/

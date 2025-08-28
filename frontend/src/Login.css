@@ -1,0 +1,257 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px; /* Increased from 400px to accommodate two fields */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Add this to include padding in width calculation */
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2d3748;
+  box-sizing: border-box; /* Add this */
+  width: 100%; /* Ensure full width */
+}
+
+.form-group input::placeholder {
+  color: #a0aec0;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  color: #2d3748;
+}
+
+.form-group input:disabled {
+  background: #f7fafc;
+  cursor: not-allowed;
+  color: #a0aec0;
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #feb2b2;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* FIXED: Form row styling */
+.form-row {
+  display: flex;
+  gap: 0.75rem; /* Reduced gap */
+  width: 100%;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 0; /* Prevent flex items from overflowing */
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: #718096;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.auth-divider span {
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.google-btn:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.google-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 1rem;
+  color: #718096;
+}
+
+.auth-switch p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+}
+
+.switch-btn:hover {
+  color: #5a67d8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1rem; /* Increase gap when stacked */
+  }
+
+  .google-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+    max-width: 100%; /* Allow full width on mobile */
+  }
+
+  .login-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    gap: 1rem; /* Ensure proper spacing on mobile */
+  }
+}
